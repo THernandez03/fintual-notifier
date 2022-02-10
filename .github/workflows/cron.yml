@@ -1,7 +1,7 @@
 name: fintual-notifier
 on:
   schedule:
-    - cron: '* * * * 1-5'
+    - cron: '* * * 99 1-5'
 jobs:
   cron:
     runs-on: ubuntu-latest
