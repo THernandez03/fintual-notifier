@@ -1,0 +1,14 @@
+name: fintual-notifier
+on:
+  schedule:
+    - cron: '* * * * 1-5'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger endpoint request
+        run: |
+          curl \
+          --request POST \
+          --url '${{ secrets.DOMAIN }}' \
+          --header 'Authorization: Bearer ${{ secrets.ACCESS_TOKEN }}'
